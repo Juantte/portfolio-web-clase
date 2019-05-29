@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Juantte</title>
+    </head>
+    <body>
+        <header>
+            <div class="bar"></div>
+            <div class="bar">
+                <H1><a href="index.html">juantte</a></H1>
+            </div>
+
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+
+            <div class="bar">
+                <H1><a href="./components/tipo.html">tipografia</a></H1>
+            </div>
+            <div class="bar">
+                <H1><a href="./components/videojuego.html">videojuego</a></H1>
+            </div>
+            <div class="bar">
+                <H1><a href="./components/contacto.html">contacto</a></H1>
+            </div>
+        </header>
+
+        <div id="logo">
+            <p>Estudiante de Diseño Gráfico en la EASDValencia</p>
+            <p>Interesado en estudio de la tipografía y la nueva</p>
+            <p>tecnologia de las variable fonts.</p>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script>
+            document.addEventListener("mousemove", variaFuente);
+            function variaFuente(e) {
+                var wt = 400 + (500 / (screen.width + 1)) * e.screenX;
+                var ct = 1 + (100 / (screen.height - 75 + 1)) * e.screenY - 10;
+                console.log(wt, ct);
+                var ourcss = '"ctrs" ' + ct + ', "wght" ' + wt;
+                $("#logo").css("font-variation-settings", ourcss);
+                $("#ct").text(parseInt(ct, 10));
+                $("#wt").text(parseInt(wt, 10));
+            }
+        </script>
+    </body>
+</html>
